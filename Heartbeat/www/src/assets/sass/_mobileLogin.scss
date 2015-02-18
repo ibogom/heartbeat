@@ -1,0 +1,96 @@
+#logo{
+  display: table;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 125px;
+  background-image: url("../imgs/logo.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  p{
+    display: table-cell;
+    position: relative;
+    text-align: center;
+    vertical-align: bottom;
+    bottom: -20px;
+    color: black;
+  }
+}
+#mobileLogin{
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url('../imgs/bgs/party.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+div#login {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 60px;
+}
+#loginForm{
+  width:$min-screen-width;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.80);
+  border-radius: 5px;
+  p{
+    margin-top: 10px;
+    color: black;
+  }
+}
+.social{
+  a{
+    color: #ffffff;
+    &:before{
+      content:'';
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      left: 8px;
+      margin-top: -8px;
+    }
+    span{
+      padding-left: 10px;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.49);
+        top: 0;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+.form-group{
+  margin-bottom: 0px;
+}
+/*--SOCIAL BUTTONS CUSTOMIZATION--*/
+#vkLogin {
+  background-color:#45668e;
+  &:before{
+    background-image: url('../imgs/logos/vk_logo.png');
+  }
+}
+#fbLogin {
+  background-color: #3b5998;
+  &:before{
+    background-image: url('../imgs/logos/fb_logo.png');
+  }
+}
+#twLogin {
+  background-color: #3cf;
+  &:before{
+    background-image: url('../imgs/logos/tw_logo.png');
+  }
+}

@@ -1,0 +1,36 @@
+.notification-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 36px;
+  border-bottom: 1px solid $pr-clr;
+  span {
+    position: relative;
+    display: block;
+    float: left;
+    color: $font-pr-clr;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    &:first-child {
+      width: 45px;
+      text-align: left;
+    }
+    &:last-child {
+      width: calc(100% - 60px);
+      width: -moz-calc(100% - 60px);
+      width: -webkit-calc(100% - 60px);
+      width: -o-calc(100% - 60px);
+      width: calc(100% - 60px);
+      padding-left: 0px;
+      text-align: center;
+    }
+  }
+  .message:before {
+    content: '\e617';
+    color: $font-scnd-clr;
+    font-size: $font-22px;
+  }
+}
