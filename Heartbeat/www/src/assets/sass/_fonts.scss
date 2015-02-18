@@ -1,0 +1,90 @@
+//FONTS PPORERTIES
+@font-face {
+  font-family: 'Roboto';
+  src:url('../fonts/roboto/Roboto-Thin.ttf')format('truetype'),
+  url('../fonts/roboto/Roboto-Light.ttf')format('truetype'),
+  url('../fonts/roboto/Roboto-Medium.ttf')format('truetype'),
+  url('../fonts/roboto/Roboto-Regular.ttf')format('truetype'),
+  url('../fonts/roboto/Roboto-Italic.ttf')format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Bold';
+  src:url('../fonts/roboto/Roboto-Bold.ttf')format('truetype'),
+  url('../fonts/roboto/Roboto-BoldItalic.ttf')format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+/*---ICONS FONT---*/
+/*
+  ICON NAME       UNICODE
+  delete v.1      : e600
+  check/done      : e601
+  liked           : e602
+  like            : e603
+  menu/list       : e604
+  lock            : e605
+  unlock          : e606
+  search          : e607
+  flag-in         : e608
+  flag-out        : e609
+  message         : e617
+  add             : e627
+  song-text       : e628
+  download v.1    : e618
+  headphones      : e619
+  arrow-back      : e61a
+  arrow-forward   : e61b
+  people          : e61c
+  person          : e61d
+  share v.1       : e61e
+  plus-one        : e61f
+  star-full       : e620
+  star-half       : e621
+  star            : e622
+  download v.2    : e623
+  delete v.2      : e624
+  share v.2       : e625
+  music-icon      : e629
+
+  player-repeat-1 : e610
+  player-shuffle  : e611
+  player-stop     : e612
+  player-vol-down : e613
+  player-vol-mute : e614
+  player-vol-off  : e615
+  player-vol-up   : e616
+  player-equalizer: e60a
+  player-next     : e60b
+  player-prev     : e60c
+  player-pause    : e60d
+  player-play     : e60e
+  player-repeat   : e60f
+*/
+@font-face {
+  font-family: 'icons';
+  src:url('../fonts/icons/icomoon.ttf'),
+      url('../fonts/icons/icomoon.eot'),
+      url('../fonts/icons/icomoon.svg'),
+      url('../fonts/icons/icomoon.woff');
+  font-style: normal;
+}
+
+$font-24px: 1.800em;
+$font-22px: 1.500em;
+$font-19px: 1.188em;
+$font-17px: 1.063em;
+$font-14px: 0.913em;
+$font-13px: 0.813em;
+$font-12px: 0.750em;
+$font-11px: 0.688em;
+
+$base-font-size: $font-14px;
+
+$sans-font-family:"Roboto",sans-serif;
+
+.icons{
+  font-family:'icons',san-serf;
+  font-size: $font-17px;
+}
