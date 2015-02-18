@@ -150,11 +150,11 @@ module.exports = function (grunt) {
             apollo: {
                 proxies: [
                     {
-                        context: '/method',
-                        host: 'api.vk.com',
-                        port: 443,
-                        https: true,
-                        xforward: false
+                        //context: '/method',
+                        //host: 'api.vk.com',
+                        //port: 443,
+                        //https: true,
+                        //xforward: false
                     }
                 ]
             }
