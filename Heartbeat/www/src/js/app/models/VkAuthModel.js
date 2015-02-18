@@ -29,7 +29,7 @@ define(["jquery", "underscore", "backbone"],
                 return this.defaults.url +
                     "client_id=" + this.defaults.clientId +
                     "&scope=" + this.defaults.scope +
-                    "&redirect_uri=" + this.defaults.redirectUriWork + "?loginMethod=" + loginMethod +
+                    "&redirect_uri=" + this.defaults.redirectUriHome + "?loginMethod=" + loginMethod +
                     "&display=" + this.defaults.display +
                     "&v=" + this.defaults.versionApi +
                     "&response_type=" + this.defaults.response;
