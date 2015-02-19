@@ -132,14 +132,11 @@ module.exports = function (grunt) {
 
         connect: {
             options: {
-                port: 443,
+                port: 8010,
                 hostname: '*',
                 keepalive: true,
-                protocol: 'https',
+                protocol: 'http',
                 base: './dest',
-                //key: grunt.file.read('server.key').toString(),
-                //cert: grunt.file.read('server.crt').toString(),
-                //ca: grunt.file.read('ca.crt').toString(),
                 middleware: function (connect, options, middlewares) {
                     var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
                     middlewares.unshift(proxy);
@@ -150,11 +147,11 @@ module.exports = function (grunt) {
             apollo: {
                 proxies: [
                     {
-                        context: '/method',
-                        host: 'api.vk.com',
-                        port: 443,
-                        https: true,
-                        xforward: true
+                        //context: '/method',
+                        //host: 'api.vk.com',
+                        //port: 443,
+                        //https: true,
+                        //xforward: true
                     }
                 ]
             }
@@ -177,7 +174,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default',
         ['clean', 'copy', 'jshint', 'sass', 'handlebars', 'requirejs', 'watch']); //задача по умолчанию, просто grunt
 
-    grunt.registerTask('server:apollo', ['configureProxies:apollo', 'connect:apollo']);
+    grunt.registerTask('server', ['configureProxies:apollo', 'connect:apollo']);
 
     grunt.registerTask('test', ['jshint']);
 }
