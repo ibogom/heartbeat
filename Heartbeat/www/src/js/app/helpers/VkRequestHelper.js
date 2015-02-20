@@ -7,7 +7,7 @@ define(["jquery", "underscore"],
         var vkRequestHelper = function(){
             return {
                 defaults: {
-                    "defUrl": "https://api.vk.com/method/",
+                    "defUrl": "http://localhost:8011/method/",
                     "getFriends": "friends.get",
                     "getFriendsOnline": "friends.getOnline",
                     "getAudio": "audio.get",

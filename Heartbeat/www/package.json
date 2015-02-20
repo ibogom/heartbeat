@@ -13,6 +13,7 @@
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-locales": "^6.1.0"
+    "grunt-locales": "^6.1.0",
+    "grunt-proxy": "0.0.3"
   }
 }

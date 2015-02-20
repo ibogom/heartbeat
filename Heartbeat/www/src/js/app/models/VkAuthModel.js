@@ -9,10 +9,7 @@ define(["jquery", "underscore", "backbone"],
                 "clientId": "4790565",
                 "securityKey": "sGkcxJvxfooJf7dHWWd6",
                 "url": "http://oauth.vk.com/authorize?",
-                "redirectUriHome": "http://localhost:8010",
-                //"redirectUriWork": "http://10.131.171.143:8443",
-                //"redirectUri5rooms": "http://192.168.1.103:8443",
-                //"redirectWebSite": "https://comeon.com.ua/",
+                "redirectUri": "http://localhost:8010",
                 "scope": "friends,audio",
                 "display": "mobile",
                 "versionApi": "5.27",
@@ -29,7 +26,7 @@ define(["jquery", "underscore", "backbone"],
                 return this.defaults.url +
                     "client_id=" + this.defaults.clientId +
                     "&scope=" + this.defaults.scope +
-                    "&redirect_uri=" + this.defaults.redirectUriHome + "?loginMethod=" + loginMethod +
+                    "&redirect_uri=" + this.defaults.redirectUri + "?loginMethod=" + loginMethod +
                     "&display=" + this.defaults.display +
                     "&v=" + this.defaults.versionApi +
                     "&response_type=" + this.defaults.response;

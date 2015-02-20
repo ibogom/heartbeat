@@ -16,7 +16,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/UserMod
                 this.model = new BeatsModel();
                 this.$contentBlock = $("#layout-content-block").hide();
                 this.$el.show().css({"margin-top":window.innerHeight+"px"});
-                this.$el.animate({marginTop: -75+"px"}, 200);
+                this.$el.animate({marginTop: -85+"px"}, 200);
             },
             ui:{
                 "done":"span.done"

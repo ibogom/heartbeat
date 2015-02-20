@@ -131,39 +131,43 @@ module.exports = function (grunt) {
         },
 
         connect: {
-            options: {
-                port: 8010,
-                hostname: '*',
-                keepalive: true,
-                protocol: 'http',
-                base: './dest',
-                middleware: function (connect, options, middlewares) {
-                    var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
-                    middlewares.unshift(proxy);
-                    return middlewares;
-                }
-
-            },
             apollo: {
-                proxies: [
-                    {
-                        //context: '/method',
-                        //host: 'api.vk.com',
-                        //port: 443,
-                        //https: true,
-                        //xforward: true
+                options: {
+                    port: 8010,
+                    hostname: '*',
+                    keepalive: true,
+                    protocol: 'http',
+                    base: './dest',
+                    middleware: function (connect, options) {
+                        if (!Array.isArray(options.base)) {
+                            options.base = [options.base];
+                        }
+
+                        // Setup the proxy
+                        var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
+
+                        // Serve static files.
+                        options.base.forEach(function (base) {
+                            middlewares.push(connect.static(base));
+                        });
+
+                        // Make directory browse-able.
+                        var directory = options.directory || options.base[options.base.length - 1];
+                        middlewares.push(connect.directory(directory));
+
+                        return middlewares;
                     }
-                ]
+                }
             }
         }
-
     });
 
 //подгружаем необходимые плагины
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-connect-proxy');
+    //grunt.loadNpmTasks('grunt-connect-proxy');
+    //grunt.loadNpmTasks('grunt-proxy');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -174,7 +178,9 @@ module.exports = function (grunt) {
     grunt.registerTask('default',
         ['clean', 'copy', 'jshint', 'sass', 'handlebars', 'requirejs', 'watch']); //задача по умолчанию, просто grunt
 
-    grunt.registerTask('server', ['configureProxies:apollo', 'connect:apollo']);
+    grunt.registerTask('server', [
+            'connect:apollo'
+        ]);
 
     grunt.registerTask('test', ['jshint']);
 }
