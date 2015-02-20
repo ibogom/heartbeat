@@ -29,12 +29,15 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
                 "click @ui.friends": "getFriends"
             },
             goBack: function () {
-                $(App.footer.el).animate({"margin-bottom":-45+"px"},200,function(){
-                    App.layout.playlists.$el.animate({"margin-left":window.innerWidth+"px"},200, function(){
-                        Backbone.history.navigate("home",{trigger:true, replace:false});
-                        App.layout.playlists.$el.hide();
-                    });
-                });
+                Backbone.history.navigate("home", {trigger: true, replace: false});
+                $(App.footer.el);
+                App.layout.playlists.$el.css({"margin-left":100+"%"});
+                //$(App.footer.el).animate({"margin-bottom":-45+"px"},200,function(){
+                //    App.layout.playlists.$el.animate({"margin-left":window.innerWidth+"px"},200, function(){
+                //        Backbone.history.navigate("home",{trigger:true, replace:false});
+                //        App.layout.playlists.$el.hide();
+                //    });
+                //});
 
             },
             getSearch: function (e) {

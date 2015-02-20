@@ -35,12 +35,10 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
                 var event = $(e.currentTarget).parent().find(".pl-play");
                 event.currentTarget = event;
                 this.playMusic(event);
-                $(App.footer.el).animate({"margin-bottom": -45 + "px"}, 200, function () {
-                    App.layout.playlists.$el.animate({"margin-left": window.innerWidth + "px"}, 200, function () {
-                        Backbone.history.navigate("home", {trigger: true, replace: false});
-                        App.layout.playlists.$el.hide();
-                    });
-                });
+                Backbone.history.navigate("home", {trigger: true, replace: false});
+                $(App.footer.el);
+                App.layout.playlists.$el.css({"margin-left":100+"%"});
+                //App.layout.playlists.$el.hide();
             },
             playMusic: function (e) {
                 $("li.song").find("div.pl-pause").removeClass("pl-pause").addClass("pl-play");

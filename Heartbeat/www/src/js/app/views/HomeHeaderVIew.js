@@ -21,7 +21,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
                 "rating": "li.rating"
             },
             initialize: function(){
-                $(App.layout.playlists.el).css({"margin-left":window.innerWidth+"px"});
             },
             events: {
                 "click @ui.menu": "showSettings",
@@ -43,10 +42,8 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             showPlaylist: function () {
                 Backbone.history.navigate("playlist", {trigger: true, replace: false});
                 $(App.layout.playlists.el).show();
-                $(App.layout.playlists.el).animate({"margin-left":0+"px"},200, function(){
-                    $(App.footer.el).show().animate({"margin-bottom": 0 + "px"}, 200, function(){
-                    });
-                });
+                $(App.layout.playlists.el).css({"margin-left":0+"%"});
+                $(App.footer.el).show();
             }
         });
     });
