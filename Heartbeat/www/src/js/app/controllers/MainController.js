@@ -13,9 +13,6 @@ define([
     "use strict";
     return Backbone.Marionette.Controller.extend({
         initialize: function (options) {
-            App.mainRegion.show(App.layout);
-            App.layout.home.show(App.homePageLayout);
-            App.layout.playlists.show(App.playlistLayout);
             this.vkAPIrequestController = new VkAPIrequestController();
         },
         loginScreen: function () {

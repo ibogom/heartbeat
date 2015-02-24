@@ -14,7 +14,11 @@ define([
             home: '#layout-home',
             playlists: '#layout-playlists'
         },
-        onAttach: function(){
+        events: {
+          "touchmove .layout-wrapper":"preventDefault"
+        },
+        preventDefault: function(e){
+            e.preventDefault();
         }
     });
 });

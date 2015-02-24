@@ -30,6 +30,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             },
             goBack: function () {
                 Backbone.history.navigate("home", {trigger: true, replace: false});
+                $(App.layout.home.el).show();
                 $(App.footer.el).animate({"margin-bottom":-45+"px"},400,function(){
                     $(App.footer.el).hide();
                 });
@@ -59,7 +60,8 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             getMusic: function() {
                 if(Backbone.history.fragment === "friends") {
                     this.ui.music.addClass("active").siblings().removeClass("active");
-                    $(App.playlistLayout.list.el).show().animate({"margin-left": 0 + "px"}, 400, function () {
+                    $(App.playlistLayout.list.el).show().animate({"margin-left": 0 + "px"}, 300, function () {
+                        $(App.playlistLayout.friends.el).hide();
                         window.history.back();
                     });
                 }
@@ -67,7 +69,8 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             getFriends: function(){
                 this.ui.friends.addClass("active").siblings().removeClass("active");
                 Backbone.history.navigate("friends", {trigger: true, replace:false});
-                $(App.playlistLayout.list.el).animate({"margin-left": - window.innerWidth + "px"}, 400, function(){
+                $(App.playlistLayout.friends.el).show();
+                $(App.playlistLayout.list.el).animate({"margin-left": - window.innerWidth + "px"}, 300, function(){
                     $(this).hide();
                 });
             }

@@ -29,5 +29,8 @@ define(['jquery', 'underscore', 'backbone', '../libs/utils',
         App.homePageLayout = homePageLayout;
         App.playlistLayout = playlistLayout;
 
+        App.mainRegion.show(App.layout);
+        App.layout.home.show(App.homePageLayout);
+        App.layout.playlists.show(App.playlistLayout);
         return App;
     });
