@@ -13,9 +13,9 @@ define(['App',
             friends: '#layout-friends'
         },
         onAttach: function(){
-            $(this.regions.list).width(window.innerWidth);
-            $(this.regions.friends).width(window.innerWidth);
-            $(this.regions.searchResult).width(window.innerWidth);
+            //$(this.regions.list).width(window.innerWidth);
+            //$(this.regions.friends).width(window.innerWidth);
+            //$(this.regions.searchResult).width(window.innerWidth);
         }
     });
 });

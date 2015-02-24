@@ -35,6 +35,7 @@ define([
             this.vkAudioCollection.fetch().done(function (result) {
                 var songsCount = result.response.shift();
                 self.saveData(result.response);
+                self.compareResponse(result.response);
                 self.showView();
             });
         },
@@ -42,8 +43,16 @@ define([
             this.playListCollectionView = new PlayListCollectionView({
                 collection: this.vkAudioCollection
             });
-            App.playlistLayout.list.show(this.playListCollectionView);
+            if(!$(App.playlistLayout.list.el).html().trim()){
+                App.playlistLayout.list.show(this.playListCollectionView);
+            }
             window.loader.hide();
+        },
+        detectChanges: function(){
+            this.getAudioRequest();
+        },
+        compareResponse: function(response){
+            var localData = this.vkAudioCollection;
         },
         saveData: function (result) {
             var id = 0;

@@ -15,7 +15,6 @@ define([
             playlists: '#layout-playlists'
         },
         onAttach: function(){
-          $(this.regions.playlists).width(window.innerWidth*2);
         }
     });
 });

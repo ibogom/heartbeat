@@ -28,8 +28,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
                 "touchend @ui.play": "playMusic",
                 "touchend @ui.pause": "pauseMusic",
                 "touchend @ui.like": "likedSong",
-                "touchend @ui.download": "downloadSong",
-                "touchend @ui.info": "goBack"
+                "touchend @ui.download": "downloadSong"
             },
             goBack: function (e) {
                 var event = $(e.currentTarget).parent().find(".pl-play");

@@ -41,9 +41,10 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             },
             showPlaylist: function () {
                 Backbone.history.navigate("playlist", {trigger: true, replace: false});
-                $(App.layout.playlists.el).show();
-                $(App.layout.playlists.el).css({"margin-left":0+"%"});
-                $(App.footer.el).show();
+                $(App.layout.playlists.el).show().animate({"margin-left":0+"%"},400, function(){
+                    $(App.footer.el).show().animate({"margin-bottom": 0 + "px"}, 400, function(){
+                    });
+                });
             }
         });
     });

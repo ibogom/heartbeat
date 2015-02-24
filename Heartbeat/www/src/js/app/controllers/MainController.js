@@ -3,11 +3,11 @@ define([
     'jquery',
     'backbone',
     'marionette',
-    'views/MobileLoginView', 'views/HomeHeaderView','views/PlaylistFooterView', 'views/FriendsFooterView',
+    'views/MobileLoginView', 'views/HomeHeaderView','views/PlaylistHeaderView','views/PlaylistFooterView', 'views/FriendsFooterView',
     'controllers/MobileLoginController', 'controllers/VkAPIrequestController', 'controllers/GetBeatsController',
     'controllers/NotificationController'
 ], function (App, $, Backbone, Marionette,
-             MobileLoginView, HomeHeaderView,
+             MobileLoginView, HomeHeaderView, PlaylistHeaderView,
              PlaylistFooterView, FriendsFooterView,
              MobileLoginController, VkAPIrequestController, GetBeatsController, NotificationController) {
     "use strict";
@@ -15,6 +15,8 @@ define([
         initialize: function (options) {
             App.mainRegion.show(App.layout);
             App.layout.home.show(App.homePageLayout);
+            App.layout.playlists.show(App.playlistLayout);
+            this.vkAPIrequestController = new VkAPIrequestController();
         },
         loginScreen: function () {
             App.mainRegion.show(new MobileLoginView());
@@ -40,15 +42,14 @@ define([
         },
         showRating: function () {
             //App.header.show(new HomeHeaderView());
-            this.vkAPIrequestController = new VkAPIrequestController();
+            //this.vkAPIrequestController = new VkAPIrequestController();
         },
         showSettings: function () {
 
         },
         showPlaylist: function () {
+            App.header.show(new PlaylistHeaderView());
             App.footer.show(new PlaylistFooterView());
-            App.layout.playlists.show(App.playlistLayout);
-            this.vkAPIrequestController = new VkAPIrequestController();
             this.vkAPIrequestController.startPlayList();
         },
         downloadsPlayList: function (){
@@ -62,7 +63,7 @@ define([
         },
         showFriends: function () {
             App.footer.show(new FriendsFooterView());
-            this.vkAPIrequestController = new VkAPIrequestController();
+            //this.vkAPIrequestController = new VkAPIrequestController();
             this.vkAPIrequestController.startFriends();
         }
     });

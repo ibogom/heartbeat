@@ -30,14 +30,12 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             },
             goBack: function () {
                 Backbone.history.navigate("home", {trigger: true, replace: false});
-                $(App.footer.el);
-                App.layout.playlists.$el.css({"margin-left":100+"%"});
-                //$(App.footer.el).animate({"margin-bottom":-45+"px"},200,function(){
-                //    App.layout.playlists.$el.animate({"margin-left":window.innerWidth+"px"},200, function(){
-                //        Backbone.history.navigate("home",{trigger:true, replace:false});
-                //        App.layout.playlists.$el.hide();
-                //    });
-                //});
+                $(App.footer.el).animate({"margin-bottom":-45+"px"},400,function(){
+                    $(App.footer.el).hide();
+                });
+                $(App.layout.playlists.el).animate({"margin-left":100+"%"},400, function(){
+                    App.layout.playlists.$el.hide();
+                });
 
             },
             getSearch: function (e) {
@@ -61,16 +59,16 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             getMusic: function() {
                 if(Backbone.history.fragment === "friends") {
                     this.ui.music.addClass("active").siblings().removeClass("active");
-                    $(App.layout.playlists.el).animate({"margin-left": 0 + "px"}, 300, function () {
+                    $(App.playlistLayout.list.el).show().animate({"margin-left": 0 + "px"}, 400, function () {
                         window.history.back();
                     });
                 }
             },
             getFriends: function(){
                 this.ui.friends.addClass("active").siblings().removeClass("active");
-                $(App.layout.playlists.el).animate({"margin-left": - window.innerWidth + "px"
-                }, 300, function(){
-                    Backbone.history.navigate("friends", {trigger: true, replace:false});
+                Backbone.history.navigate("friends", {trigger: true, replace:false});
+                $(App.playlistLayout.list.el).animate({"margin-left": - window.innerWidth + "px"}, 400, function(){
+                    $(this).hide();
                 });
             }
         });

@@ -8,6 +8,16 @@ define(['App', 'jquery', 'underscore', 'backbone','marionette','collections/VkFr
             childView: FriendlistView,
             className:"friends-wrapper",
             tagName: "ul",
-            collection: VkFriendsCollection
+            collection: VkFriendsCollection,
+            setContentHeight: function(){
+                this.$el.height(function () {
+                    // 45px header height and 45px footer height
+                    var caculatedHeight = window.innerHeight - 90;
+                    return caculatedHeight + 'px';
+                }).css('overflow-y', 'scroll');
+            },
+            onRender: function(){
+                this.setContentHeight();
+            }
         });
     });
