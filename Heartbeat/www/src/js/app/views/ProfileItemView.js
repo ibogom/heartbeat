@@ -9,7 +9,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette',
             className:"profile-wrapper",
             tagName: "div",
             template: templateFn['ProfileView.hbs'],
-            //model: UserModel,
             initialize: function(){
                 this.user = Backbone.Wreqr.radio.channel('user');
                 this.user.beats = (this.user.beats !== undefined)? this.user.beats: 300;
@@ -22,7 +21,6 @@ define(['jquery', 'underscore', 'backbone', 'marionette',
 
             },
             onRender: function () {
-                //this.template(this.model.toJSON());
                 if(this.user.model !== undefined ){
                     var userInfo = this.user.model.get("userInfo");
                     this.$el.empty().append(this.template({

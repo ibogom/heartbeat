@@ -11,11 +11,6 @@ define(['App',
             searchResult: '#layout-search-result',
             list: '#layout-list',
             friends: '#layout-friends'
-        },
-        onAttach: function(){
-            //$(this.regions.list).width(window.innerWidth);
-            //$(this.regions.friends).width(window.innerWidth);
-            //$(this.regions.searchResult).width(window.innerWidth);
         }
     });
 });
