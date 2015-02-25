@@ -21,13 +21,17 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'templates/templateCol
                 "profile": ".profile",
                 "volume": ".volume",
                 "volBar": ".volume-bar",
-                'volTrigger': ".volume-trigger-button"
+                'volTrigger': ".volume-trigger-button",
+                "repeat":".repeat",
+                "shuffle":".shuffle"
             },
             events: {
-                "click @ui.play": "startMusic",
-                "click @ui.pause": "pauseMusic",
-                "click @ui.next": "nextSong",
-                "click @ui.prev": "prevSong",
+                "touchend @ui.play": "startMusic",
+                "touchend @ui.pause": "pauseMusic",
+                "touchend @ui.next": "nextSong",
+                "touchend @ui.prev": "prevSong",
+                "touchend @ui.repeat": "repeatSong",
+                "touchend @ui.shuffle": "shuffleSongs",
                 "touchend @ui.volume": "showVolume",
                 "touchend @ui.profile": "showProfile",
                 "touchstart @ui.volTrigger": "startVolumeSwipe",
@@ -52,6 +56,12 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'templates/templateCol
                 e.preventDefault();
                 this.ui.play.removeClass("play").addClass("pause");
                 this.controller.navigateSong("prev");
+            },
+            repeatSong: function(e){
+                $(e.currentTarget).toggleClass("active");
+            },
+            shuffleSongs: function(e){
+                $(e.currentTarget).toggleClass("active");
             },
             showVolume: function (e) {
                 $(e.currentTarget).toggleClass("active");

@@ -21,17 +21,16 @@ define(['jquery', 'underscore', 'backbone', 'marionette',
 
             },
             onRender: function () {
-                if(this.user.model !== undefined ){
-                    var userInfo = this.user.model.get("userInfo");
+                if(this.user.info !== undefined ){
                     this.$el.empty().append(this.template({
-                        src: userInfo.src,
-                        lastName: userInfo.lastName,
-                        firstName: userInfo.firstName,
-                        SongsNumber: userInfo.SongsNumber,
-                        ListenersNumber: userInfo.ListenersNumber,
-                        Rating: this.user.rating,
-                        MaxBeats: this.user.model.get("maxBeats"),
-                        BeatsNow: this.user.beats
+                        src: this.user.info.src,
+                        lastName: this.user.info.lastName,
+                        firstName: this.user.info.firstName,
+                        songsNumber: this.user.info.songsNumber,
+                        listenersNumber: this.user.info.listenersNumber,
+                        rating: this.user.rating,
+                        maxBeats: this.user.info.maxBeats,
+                        beatsNow: this.user.beats
                     }));
                 } else {
                     this.$el.empty().append(this.template({

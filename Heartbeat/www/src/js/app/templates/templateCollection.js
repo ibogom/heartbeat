@@ -25,7 +25,7 @@ Handlebars.registerPartial("FriendsView.hbs", this["Heartbeat"]["FriendsView.hbs
 },"useData":true}));
 
 Handlebars.registerPartial("GetBeats.hbs", this["Heartbeat"]["GetBeats.hbs"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
-  return "        <span class=\"btn-scnd-bg get-beats\">Get beats</span>\r\n";
+  return "        <span class=\"btn-scnd-bg get-beats\">Start beats</span>\r\n";
   },"3":function(depth0,helpers,partials,data) {
   var stack1, buffer = "        <div class=\"beats-cat-title-wrapper\">\r\n            <span class=\"title\">Choose your favorite music categories :</span>\r\n            <span class=\"done btn-scnd-bg\">Done</span>\r\n        </div>\r\n        <ul class=\"beats-cat-wrapper\">\r\n";
   stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.genre_id : depth0), {"name":"each","hash":{},"fn":this.program(4, data),"inverse":this.noop,"data":data});
@@ -175,16 +175,16 @@ Handlebars.registerPartial("ProfileView.hbs", this["Heartbeat"]["ProfileView.hbs
     + "</span>\r\n        <span class=\"first-name\">"
     + escapeExpression(((helper = (helper = helpers.firstName || (depth0 != null ? depth0.firstName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"firstName","hash":{},"data":data}) : helper)))
     + "</span>\r\n    </div>\r\n    <div class=\"stats\">\r\n        <div class=\"title-row\">\r\n            <span class=\"songs-title\">Songs</span>\r\n            <span class=\"listeners-title\">Listeners</span>\r\n            <span class=\"rating-title\">Rating</span>\r\n        </div>\r\n        <div class=\"stat-row\">\r\n            <span class=\"songs-total\">"
-    + escapeExpression(((helper = (helper = helpers.SongsNumber || (depth0 != null ? depth0.SongsNumber : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"SongsNumber","hash":{},"data":data}) : helper)))
+    + escapeExpression(((helper = (helper = helpers.songsNumber || (depth0 != null ? depth0.songsNumber : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"songsNumber","hash":{},"data":data}) : helper)))
     + "</span>\r\n            <span class=\"listeners-res\">"
-    + escapeExpression(((helper = (helper = helpers.ListenersNumber || (depth0 != null ? depth0.ListenersNumber : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"ListenersNumber","hash":{},"data":data}) : helper)))
+    + escapeExpression(((helper = (helper = helpers.listenersNumber || (depth0 != null ? depth0.listenersNumber : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"listenersNumber","hash":{},"data":data}) : helper)))
     + "</span>\r\n            <span class=\"rating-res\">"
-    + escapeExpression(((helper = (helper = helpers.Rating || (depth0 != null ? depth0.Rating : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"Rating","hash":{},"data":data}) : helper)))
+    + escapeExpression(((helper = (helper = helpers.rating || (depth0 != null ? depth0.rating : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"rating","hash":{},"data":data}) : helper)))
     + "</span>\r\n        </div>\r\n    </div>\r\n    <div class=\"beats-main-title\">\r\n        Beats for today\r\n    </div>\r\n    <span class=\"beats-now-wrapper\"><span class=\"beats-now\">"
-    + escapeExpression(((helper = (helper = helpers.BeatsNow || (depth0 != null ? depth0.BeatsNow : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"BeatsNow","hash":{},"data":data}) : helper)))
+    + escapeExpression(((helper = (helper = helpers.beatsNow || (depth0 != null ? depth0.beatsNow : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"beatsNow","hash":{},"data":data}) : helper)))
     + "</span> / "
-    + escapeExpression(((helper = (helper = helpers.MaxBeats || (depth0 != null ? depth0.MaxBeats : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"MaxBeats","hash":{},"data":data}) : helper)))
-    + "</span>\r\n    <!--<span class=\"beats-progress\">-->\r\n    <!--<div class=\"beats-stat-wrapper\">-->\r\n    <!--<div class=\"beats-trigger\"></div>-->\r\n    <!--</div>-->\r\n    <!--</span>-->\r\n    <!--<span class=\"beats-max\">1500</span>-->\r\n</div>";
+    + escapeExpression(((helper = (helper = helpers.maxBeats || (depth0 != null ? depth0.maxBeats : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"maxBeats","hash":{},"data":data}) : helper)))
+    + "</span>\r\n</div>";
 },"useData":true}));
 
 Handlebars.registerPartial("SearchView.hbs", this["Heartbeat"]["SearchView.hbs"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

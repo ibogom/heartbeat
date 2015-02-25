@@ -24,6 +24,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/UserMod
             getBeats: function(){
                this.user.beats = this.user.beats-100;
                 $(".beats-now").text(this.user.beats);
+                window.localStorage.setItem("beats",JSON.stringify(this.user.beats));
                Backbone.history.navigate("beats", {trigger:true, replace:false});
             }
         });

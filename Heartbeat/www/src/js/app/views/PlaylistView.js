@@ -61,6 +61,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
             likedSong: function () {
                 var self = this;
                 this.user.beats = this.user.beats+3;
+                window.localStorage.setItem("beats",JSON.stringify(this.user.beats));
                 this.ui.share.show().animate({
                     "margin-left": 0 + "px"
                 }, 300, function () {
@@ -69,6 +70,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
             },
             shareSong: function (){
                 this.user.beats = this.user.beats+6;
+                window.localStorage.setItem("beats",JSON.stringify(this.user.beats));
             },
             downloadSong: function () {
 
