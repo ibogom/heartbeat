@@ -24,10 +24,10 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'templates/templateCol
                 'volTrigger': ".volume-trigger-button"
             },
             events: {
-                "touchend @ui.play": "startMusic",
-                "touchend @ui.pause": "pauseMusic",
-                "touchend @ui.next": "nextSong",
-                "touchend @ui.prev": "prevSong",
+                "click @ui.play": "startMusic",
+                "click @ui.pause": "pauseMusic",
+                "click @ui.next": "nextSong",
+                "click @ui.prev": "prevSong",
                 "touchend @ui.volume": "showVolume",
                 "touchend @ui.profile": "showProfile",
                 "touchstart @ui.volTrigger": "startVolumeSwipe",

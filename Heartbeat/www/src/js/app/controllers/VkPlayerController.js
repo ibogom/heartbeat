@@ -24,10 +24,12 @@ define([
                 this.global.model = this.collection.models[0];
             }
             this.nextSong = function () {
-                return this.collection.models[++this.global.model.id];
+                this.global.model.id++;
+                return this.collection.models[this.global.model.id];
             };
             this.prevSong = function () {
-                return this.collection.models[--this.global.model.id];
+                this.global.model.id--;
+                return this.collection.models[this.global.model.id];
             };
             if (!this.global.volume) {
                 this.global.volume = 0.5;
@@ -47,7 +49,6 @@ define([
                     controller: self
                 });
                 self.playSong();
-                //self.user.beats--;
                 $(".beats-now").text(self.user.beats--);
                 App.homePageLayout.playerBlock.show(self.playerView);
             }, false);
@@ -72,7 +73,7 @@ define([
         },
         navigateSong: function (elTrigger) {
             this.stopAudio();
-            this.global.model = (elTrigger === "next") ? this.nextSong() : this.prevSong();
+            this.global.model = (elTrigger === "next")? this.nextSong() : this.prevSong();
             this.loadSong();
         }
     });

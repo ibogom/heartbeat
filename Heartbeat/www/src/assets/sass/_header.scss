@@ -14,7 +14,7 @@
     }
   }
   span{
-    width: 25px;
+    width: 40px;
     position: relative;
     display: inline-block;
     font-size:0.90em;
@@ -33,6 +33,8 @@
   width: 20%;
   float: left;
   span{
+    padding-left: 5px;
+    text-align: left;
     margin-left: 40px;
     position: absolute;
     left: 0;
@@ -49,8 +51,8 @@
   .left-back:before{
     content:'\e61a';
   }
-  .menu:before{
-    content: '\e604';
+  .menu:before {
+      content: '\e604';
   }
 }
 /*---HEADER MIDDLE PART--*/
@@ -98,6 +100,8 @@ ul.list-switch{
   span{
     position: absolute;
     right: 0;
+    padding-right: 5px;
+    text-align: right;
   }
   .right-back:before{
     content: "\e61b";
@@ -105,10 +109,10 @@ ul.list-switch{
   .search:before{
     content: '\e607';
   }
-  .playlist:before{
-    content: '\e629';
-    font-size: $font-22px;
-    line-height: $font-24px;
+  .playlist:before {
+      content: '\e629';
+      font-size: $font-22px;
+      line-height: $font-24px;
   }
   .cancel{
     color: $font-scnd-clr;
