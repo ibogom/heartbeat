@@ -23,10 +23,10 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             initialize: function(){
             },
             events: {
-                "click @ui.menu": "showSettings",
-                "click @ui.playlist": "showPlaylist",
-                "click @ui.player": "showPlayer",
-                "click @ui.rating": "showRating"
+                "touchend @ui.menu": "showSettings",
+                "touchend @ui.playlist": "showPlaylist",
+                "touchend @ui.player": "showPlayer",
+                "touchend @ui.rating": "showRating"
             },
             showRating: function () {
                 this.ui.rating.addClass("active").siblings().removeClass("active");
@@ -39,7 +39,8 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             showSettings: function () {
                 Backbone.history.navigate("settings", {trigger: true, replace: false});
             },
-            showPlaylist: function () {
+            showPlaylist: function (e) {
+                e.preventDefault();
                 Backbone.history.navigate("playlist", {trigger: true, replace: false});
                 $(App.layout.playlists.el).css({"margin-left":"100%"});
                 $(App.layout.playlists.el).show().animate({"margin-left":0+"%"},400, function(){
