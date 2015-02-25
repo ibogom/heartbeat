@@ -16,7 +16,11 @@ define([
             this.vkAPIrequestController = new VkAPIrequestController();
         },
         loginScreen: function () {
-            App.mainRegion.show(new MobileLoginView());
+            if(window.localStorage.getItem("userGlobals") !== null){
+                Backbone.history.navigate("home", {trigger: true, replace: false});
+            } else{
+                App.mainRegion.show(new MobileLoginView());
+            }
         },
         validationScreen: function () {
             this.mobileLoginController = new MobileLoginController();

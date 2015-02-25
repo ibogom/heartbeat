@@ -13,6 +13,14 @@
     height: 100%;
     padding: 0px 10px;
     box-sizing: border-box;
+    @media all and (min-width: 600px){
+      width: 25%;
+      display: block;
+      float: left;
+      padding-top: 25px;
+      padding-left: 25px;
+      box-sizing: border-box;
+    }
     img{
       border-radius: 50%;
       border: 2px solid $pr-clr;
@@ -24,9 +32,22 @@
     display: table-cell;
     width: 65%;
     height: 100%;
+    @media all and (min-width: 600px){
+      float: left;
+      display: block;
+      width: 75%;
+      position: relative;
+    }
     .personal-info {
       height: 40px;
       padding: 10px 0px 0px 10px;
+      @media all and (min-width: 600px){
+        text-align: center;
+        font-size: $font-22px;
+        padding-top: 5px;
+        width: 100%;
+        float: left;
+      }
       span{
         color: $font-pr-clr;
         font-size: $font-19px;
@@ -40,10 +61,21 @@
       width: 100%;
       height: 40px;
       border-collapse: collapse;
+      @media all and (min-width: 600px){
+        float: left;
+        width: 50%;
+        height: 70px;
+        line-height: 70px;
+        font-size: $font-17px;
+      }
       div{
         display: table-row;
         height: 20px;
         line-height: 20px;
+        @media all and (min-width: 600px){
+          height: 35px;
+          line-height: 35px;
+        }
         span{
           color: $font-pr-clr;
           font-size: $font-14px;
