@@ -18,7 +18,7 @@ define([
         loginScreen: function () {
             if(window.localStorage.getItem("userGlobals") !== null){
                 Backbone.history.navigate("home", {trigger: true, replace: false});
-            } else{
+            } else {
                 App.mainRegion.show(new MobileLoginView());
             }
         },
