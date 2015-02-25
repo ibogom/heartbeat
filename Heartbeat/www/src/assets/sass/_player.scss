@@ -128,24 +128,24 @@
     }
     .active-buttons-right{
       position: relative;
-      .equalizer:before{
+      .profile:before{
           position: absolute;
           display: block;
           height: 25px;
           top:10px;
           font-size: $font-22px;
           color: $font-pr-clr;
-          content: '\e60a';
-        }
-      .profile:before{
-          position: absolute;
-          display: block;
-          height: 25px;
-          bottom: 0;
-          font-size: $font-22px;
-          color: $font-pr-clr;
           content: '\e61d';
         }
+      .shuffle:before{
+        position: absolute;
+        display: block;
+        height: 25px;
+        bottom: 0;
+        font-size: $font-22px;
+        color: $font-pr-clr;
+        content: '\e611';
+      }
     }
     .active:before{
       color: $font-scnd-clr!important;

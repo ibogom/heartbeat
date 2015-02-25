@@ -30,10 +30,10 @@ define(["jquery", "underscore"],
                         "&fields=" + "photo_50,city,country,online" +
                         "&access_token=" + accessToken;
                 },
-                getUserInfoUrl: function (userId) {
+                getUserInfoUrl: function (userId,accessToken) {
                     return this.defaults.defUrl +
                         this.defaults.userInfo + "?" + "user_id=" +
-                        userId + "&fields=photo_100";
+                        userId + "&fields=photo_100,online,counters"+"&access_token="+accessToken;
                 },
                 searchAudios: function(keywords,accessToken){
                     return this.defaults.defUrl + this.defaults.audioSearch + "?" + "q=" + keywords +

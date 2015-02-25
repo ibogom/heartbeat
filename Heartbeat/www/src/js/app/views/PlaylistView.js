@@ -14,6 +14,8 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
             initialize: function () {
                 this.player = new Player();
                 this.global = Backbone.Wreqr.radio.channel('global');
+                this.user = Backbone.Wreqr.radio.channel('user');
+                this.user.beats = (this.user.beats !== undefined)? this.user.beats: 300;
             },
             ui: {
                 "info": ".song-info",
@@ -28,6 +30,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
                 "touchend @ui.play": "playMusic",
                 "touchend @ui.pause": "pauseMusic",
                 "touchend @ui.like": "likedSong",
+                "touchend @ui.share": "shareSong",
                 "touchend @ui.download": "downloadSong"
             },
             goBack: function (e) {
@@ -48,7 +51,8 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
                 }
                 this.global.model = this.model;
                 this.global.model.set("isPlayed",true);
-               (this.global.model.get("loaded") === true)? this.player.playSong() : this.player.loadSong();
+                this.player.loadSong();
+               //(this.global.model.get("loaded") === true)? this.player.playSong() : this.player.loadSong();
             },
             pauseMusic: function (e) {
                 $(e.currentTarget).removeClass("pl-pause").addClass("pl-play");
@@ -56,11 +60,15 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
             },
             likedSong: function () {
                 var self = this;
+                this.user.beats = this.user.beats+3;
                 this.ui.share.show().animate({
                     "margin-left": 0 + "px"
                 }, 300, function () {
                     self.ui.like.hide();
                 });
+            },
+            shareSong: function (){
+                this.user.beats = this.user.beats+6;
             },
             downloadSong: function () {
 

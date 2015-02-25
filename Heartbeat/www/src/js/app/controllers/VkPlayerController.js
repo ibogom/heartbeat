@@ -16,8 +16,13 @@ define([
     return Backbone.Marionette.Controller.extend({
         initialize: function () {
             this.global = Backbone.Wreqr.radio.channel('global');
+            this.user = Backbone.Wreqr.radio.channel('user');
+            this.user.beats = (this.user.beats !== undefined)? this.user.beats: 300;
             this.collection = new VkAudioCollection();
             this.collection.setData();
+            if(!this.global.model){
+                this.global.model = this.collection.models[0];
+            }
             this.nextSong = function () {
                 return this.collection.models[++this.global.model.id];
             };
@@ -42,18 +47,20 @@ define([
                     controller: self
                 });
                 self.playSong();
+                //self.user.beats--;
+                $(".beats-now").text(self.user.beats--);
                 App.homePageLayout.playerBlock.show(self.playerView);
             }, false);
         },
         playSong: function () {
             this.collection.models[this.global.model.id].set("isPlayed", true);
             window.localStorage.setItem("songs", JSON.stringify(this.collection.models));
-            this.global.audio.play();
+            (!this.global.audio)? this.loadSong() : this.global.audio.play();
         },
         pauseSong: function () {
             this.collection.models[this.global.model.id].set("isPlayed", false);
             window.localStorage.setItem("songs", JSON.stringify(this.collection.models));
-            this.global.audio.pause();
+            (!this.global.audio)? this.loadSong() : this.global.audio.pause();
         },
         stopAudio: function () {
             this.global.audio.pause();

@@ -60,8 +60,10 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
             getMusic: function() {
                 if(Backbone.history.fragment === "friends") {
                     this.ui.music.addClass("active").siblings().removeClass("active");
+                    $(App.footer.el).animate({"margin-bottom":-45+"px"},300);
                     $(App.playlistLayout.list.el).show().animate({"margin-left": 0 + "px"}, 300, function () {
                         $(App.playlistLayout.friends.el).hide();
+                        $(App.footer.el).animate({"margin-bottom":-0+"px"},300);
                         window.history.back();
                     });
                 }
@@ -70,7 +72,9 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
                 this.ui.friends.addClass("active").siblings().removeClass("active");
                 Backbone.history.navigate("friends", {trigger: true, replace:false});
                 $(App.playlistLayout.friends.el).show();
+                $(App.footer.el).animate({"margin-bottom":-45+"px"},300);
                 $(App.playlistLayout.list.el).animate({"margin-left": - window.innerWidth + "px"}, 300, function(){
+                    $(App.footer.el).animate({"margin-bottom":-0+"px"},300);
                     $(this).hide();
                 });
             }

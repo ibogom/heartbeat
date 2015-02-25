@@ -11,6 +11,10 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/UserMod
             template: templateFn['GetBeats.hbs']({
                 showGetBeats: true
             }),
+            initialize: function(){
+                this.user = Backbone.Wreqr.radio.channel('user');
+                this.user.beats = (this.user.beats !== undefined)? this.user.beats: 300;
+            },
             ui:{
                 "getBeats":"span.get-beats"
             },
@@ -18,6 +22,8 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/UserMod
                 "click @ui.getBeats":"getBeats"
             },
             getBeats: function(){
+               this.user.beats = this.user.beats-100;
+                $(".beats-now").text(this.user.beats);
                Backbone.history.navigate("beats", {trigger:true, replace:false});
             }
         });

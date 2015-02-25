@@ -99,41 +99,41 @@ ul.beats-cat-wrapper {
     }
   }
 }
-.beats-now-title{
-  position: relative;
-  top: 10px;
-}
+
 .beats-main-title{
   position: relative;
-  top: 10px;
-  width: 70%!important;
-  font-size: $font-19px!important;
+  width: 100%!important;
+  text-align: center;
+  font-size: $font-24px!important;
   color: $font-scnd-clr!important;
 }
-.beats-max-title{
-  position: relative;
-  top: 10px;
-}
-.beats-now{
+.beats-now-wrapper{
+  width: 100%!important;
+  text-align: center;
+  display: block;
+  font-size: $font-24px!important;
   color: $font-scnd-clr!important;
-}
-.beats-row{
-  width: 100%;
-  height: 30px;
-  line-height: 30px;
-  padding: 0px 10px;
-  display: table;
-  span{
-    width: 15%;
-    color: $font-pr-clr;
-    float: left;
-    font-size: $font-12px;
-    text-align: center;
-    &:last-child{
-      float: right;
-    }
+  .beats-now{
+    color: $font-pr-clr!important;
   }
 }
+//.beats-row{
+//  width: 100%;
+//  height: 30px;
+//  line-height: 30px;
+//  padding: 0px 10px;
+//  display: table;
+//  span{
+//    width: 15%;
+//    color: $font-pr-clr;
+//    float: left;
+//    font-size: $font-12px;
+//    text-align: center;
+//    &:last-child{
+//      float: right;
+//    }
+//  }
+//}
 .beats-progress{
   position: relative;
   width: 70%!important;
