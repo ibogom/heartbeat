@@ -11,6 +11,13 @@ define(['App',
             searchResult: '#layout-search-result',
             list: '#layout-list',
             friends: '#layout-friends'
+        },
+        events: {
+            "touchmove #layout-list":"increaseScroll"
+        },
+        increaseScroll: function(e){
+            //var currPos = window.event.targetTouches[0].pageY;
+            //return window.scrollTo(currPos*2,0);
         }
     });
 });

@@ -62,17 +62,17 @@ ul.friends-wrapper{
         &:after {
           font-family: "icons", sans-serif;
           position: absolute;
-          font-size:$font-22px;
+          font-size:$font-19px;
           right: 15px;
           content: '\e601';
-          color: $font-scnd-clr;
-          opacity: 0.6;
+          color: $font-pr-clr;
           margin-top: 18px;
           right: 16px;
         }
       }
       input[type="checkbox"]:checked+label:after{
         opacity: 1;
+        color: $font-scnd-clr;
       }
     }
     .name {

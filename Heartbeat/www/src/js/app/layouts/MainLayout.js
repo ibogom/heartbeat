@@ -13,12 +13,6 @@ define([
             settings: '#layout-settings',
             home: '#layout-home',
             playlists: '#layout-playlists'
-        },
-        events: {
-          "touchmove .layout-wrapper":"preventDefault"
-        },
-        preventDefault: function(e){
-            e.preventDefault();
         }
     });
 });

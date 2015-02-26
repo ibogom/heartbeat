@@ -37,6 +37,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
                 this.ui.player.addClass("active").siblings().removeClass("active");
                 this.ui.search.hide();
                 this.ui.message.show();
+                $(App.layout.home.el).show();
                 Backbone.history.navigate("home", {trigger: true, replace: false});
                 $(App.layout.playlists.el).animate({"margin-left":100+"%"},250, function(){
                     $(this).hide();
@@ -55,6 +56,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App', 'templates/temp
                     Backbone.history.navigate("playlist", {trigger: true, replace: false});
                     $(App.layout.playlists.el).css({"margin-left": "100%"});
                     $(App.layout.playlists.el).show().animate({"margin-left": 0 + "%"}, 300, function () {
+                        $(App.layout.home.el).hide();
                         $(App.footer.el).show().animate({"margin-bottom": 0 + "px"}, 300, function () {
                         });
                     });
