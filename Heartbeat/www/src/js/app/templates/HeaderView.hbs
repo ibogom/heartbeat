@@ -17,22 +17,23 @@
         {{#if showlist}}
             <ul class="list-switch">
                 {{#if showHomeNav}}
-                    <li class="player active">Beats</li>
-                    <li class="rating">Rating</li>
-                {{/if}}
-                {{#if showPlaylistNav}}
-                    <li class="music active">Music</li>
-                    <li class="friends">Friends</li>
+                    <li class="player active">Player</li>
+                    <li class="music">Music</li>
                 {{/if}}
             </ul>
+        {{/if}}
+        {{#if showSend}}
+            <span class="btn-third-clr send">Send</span>
         {{/if}}
     </div>
     <div class="right-el icons">
         {{#if showRightBack}}
             <span class="right-back"></span>
         {{/if}}
-        {{#if showPlaylist }}
-            <span class="playlist"></span>
+        {{#if showMessages }}
+        <span class="icons message">
+            <span class="messages-count">0</span>
+        </span>
         {{/if}}
         {{#if showSearch }}
             <span class="search"></span>

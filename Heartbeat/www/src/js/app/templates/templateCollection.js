@@ -21,7 +21,7 @@ Handlebars.registerPartial("FriendsView.hbs", this["Heartbeat"]["FriendsView.hbs
     + escapeExpression(((helper = (helper = helpers.lastName || (depth0 != null ? depth0.lastName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"lastName","hash":{},"data":data}) : helper)))
     + "</span>\r\n        <span class=\"first-name\">"
     + escapeExpression(((helper = (helper = helpers.firstName || (depth0 != null ? depth0.firstName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"firstName","hash":{},"data":data}) : helper)))
-    + "</span>\r\n    </div>\r\n    <div class=\"fl-stat\">\r\n        <span class=\"raiting\">rating: </span>\r\n        <span class=\"rating-value\">10203</span>\r\n    </div>\r\n</div>\r\n<div class=\"fl-active-btns\">\r\n    <span class=\"share\"></span>\r\n    <span class=\"listen\"></span>\r\n</div>\r\n";
+    + "</span>\r\n    </div>\r\n    <div class=\"fl-stat\">\r\n        <span class=\"raiting\">rating: </span>\r\n        <span class=\"rating-value\">10203</span>\r\n    </div>\r\n</div>\r\n<div class=\"fl-active-btns\">\r\n    <input type=\"checkbox\" name=\"\" id=\"\"/><label class=\"icons check\"></label>\r\n</div>\r\n";
 },"useData":true}));
 
 Handlebars.registerPartial("GetBeats.hbs", this["Heartbeat"]["GetBeats.hbs"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
@@ -60,17 +60,15 @@ Handlebars.registerPartial("HeaderView.hbs", this["Heartbeat"]["HeaderView.hbs"]
   var stack1, buffer = "            <ul class=\"list-switch\">\r\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showHomeNav : depth0), {"name":"if","hash":{},"fn":this.program(10, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showPlaylistNav : depth0), {"name":"if","hash":{},"fn":this.program(12, data),"inverse":this.noop,"data":data});
-  if (stack1 != null) { buffer += stack1; }
   return buffer + "            </ul>\r\n";
 },"10":function(depth0,helpers,partials,data) {
-  return "                    <li class=\"player active\">Beats</li>\r\n                    <li class=\"rating\">Rating</li>\r\n";
+  return "                    <li class=\"player active\">Player</li>\r\n                    <li class=\"music\">Music</li>\r\n";
   },"12":function(depth0,helpers,partials,data) {
-  return "                    <li class=\"music active\">Music</li>\r\n                    <li class=\"friends\">Friends</li>\r\n";
+  return "            <span class=\"btn-third-clr send\">Send</span>\r\n";
   },"14":function(depth0,helpers,partials,data) {
   return "            <span class=\"right-back\"></span>\r\n";
   },"16":function(depth0,helpers,partials,data) {
-  return "            <span class=\"playlist\"></span>\r\n";
+  return "        <span class=\"icons message\">\r\n            <span class=\"messages-count\">0</span>\r\n        </span>\r\n";
   },"18":function(depth0,helpers,partials,data) {
   return "            <span class=\"search\"></span>\r\n            <span class=\"cancel\">Cancel</span>\r\n";
   },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -86,10 +84,12 @@ Handlebars.registerPartial("HeaderView.hbs", this["Heartbeat"]["HeaderView.hbs"]
   if (stack1 != null) { buffer += stack1; }
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showlist : depth0), {"name":"if","hash":{},"fn":this.program(9, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
+  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showSend : depth0), {"name":"if","hash":{},"fn":this.program(12, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
   buffer += "    </div>\r\n    <div class=\"right-el icons\">\r\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showRightBack : depth0), {"name":"if","hash":{},"fn":this.program(14, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showPlaylist : depth0), {"name":"if","hash":{},"fn":this.program(16, data),"inverse":this.noop,"data":data});
+  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showMessages : depth0), {"name":"if","hash":{},"fn":this.program(16, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.showSearch : depth0), {"name":"if","hash":{},"fn":this.program(18, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
@@ -113,7 +113,7 @@ Handlebars.registerPartial("MobileRegistration.hbs", this["Heartbeat"]["MobileRe
   },"useData":true}));
 
 Handlebars.registerPartial("Notifications.hbs", this["Heartbeat"]["Notifications.hbs"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  return "<span class=\"icons message\"></span>\r\n<span class=\"message-text\">0 Recommendations</span>";
+  return "<span class=\"message-text\"></span>";
   },"useData":true}));
 
 Handlebars.registerPartial("PlayerView.hbs", this["Heartbeat"]["PlayerView.hbs"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {

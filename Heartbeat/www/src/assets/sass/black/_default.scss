@@ -85,7 +85,13 @@ body{
   color:$font-scnd-clr;
   background: none;
 }
-
+.btn-third-clr{
+  width: 100%;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: $third-clr;
+}
 .btn-auth{
   padding-left: 60px;
   width: 100%;

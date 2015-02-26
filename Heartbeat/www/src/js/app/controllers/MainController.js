@@ -3,11 +3,12 @@ define([
     'jquery',
     'backbone',
     'marionette',
-    'views/MobileLoginView', 'views/HomeHeaderView','views/PlaylistHeaderView','views/PlaylistFooterView', 'views/FriendsFooterView',
+    'views/MobileLoginView', 'views/HomeHeaderView','views/SendMusicHeaderVIew','views/PlaylistFooterView',
+    'views/FriendsFooterView',
     'controllers/MobileLoginController', 'controllers/VkAPIrequestController', 'controllers/GetBeatsController',
     'controllers/NotificationController'
 ], function (App, $, Backbone, Marionette,
-             MobileLoginView, HomeHeaderView, PlaylistHeaderView,
+             MobileLoginView, HomeHeaderView, SendMusicHeaderVIew,
              PlaylistFooterView, FriendsFooterView,
              MobileLoginController, VkAPIrequestController, GetBeatsController, NotificationController) {
     "use strict";
@@ -42,14 +43,12 @@ define([
             this.getBeatsController.getCategory();
         },
         showRating: function () {
-            //App.header.show(new HomeHeaderView());
-            //this.vkAPIrequestController = new VkAPIrequestController();
+
         },
         showSettings: function () {
 
         },
         showPlaylist: function () {
-            App.header.show(new PlaylistHeaderView());
             App.footer.show(new PlaylistFooterView());
             this.vkAPIrequestController.startPlayList();
         },
@@ -63,8 +62,8 @@ define([
 
         },
         showFriends: function () {
+            App.header.show(new SendMusicHeaderVIew());
             App.footer.show(new FriendsFooterView());
-            //this.vkAPIrequestController = new VkAPIrequestController();
             this.vkAPIrequestController.startFriends();
         }
     });

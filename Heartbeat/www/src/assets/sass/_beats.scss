@@ -1,19 +1,19 @@
 .get-beats-wrapper {
   position: fixed;
   width: 100%;
-  height: 65px;
+  height: 45px;
   text-align: center;
   background: inherit;
   bottom: 0px;
   span {
-    width: 80%;
+    width: 70%;
     position: relative;
-    height: 50px;
+    height: 35px;
     display: block;
     margin: 0 auto;
-    font-size: $font-22px;
+    font-size: $font-19px;
     line-height: 35px;
-    padding: 5px 25px;
+    padding: 0px 20px;
   }
 }
 .get-category-wrapper{
@@ -117,23 +117,7 @@ ul.beats-cat-wrapper {
     color: $font-pr-clr!important;
   }
 }
-//.beats-row{
-//  width: 100%;
-//  height: 30px;
-//  line-height: 30px;
-//  padding: 0px 10px;
-//  display: table;
-//  span{
-//    width: 15%;
-//    color: $font-pr-clr;
-//    float: left;
-//    font-size: $font-12px;
-//    text-align: center;
-//    &:last-child{
-//      float: right;
-//    }
-//  }
-//}
+
 .beats-progress{
   position: relative;
   width: 70%!important;

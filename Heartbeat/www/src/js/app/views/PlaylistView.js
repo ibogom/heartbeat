@@ -71,6 +71,13 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
             shareSong: function (){
                 this.user.beats = this.user.beats+6;
                 window.localStorage.setItem("beats",JSON.stringify(this.user.beats));
+                Backbone.history.navigate("friends", {trigger: true, replace:false});
+                $(App.footer.el).show().animate({"margin-bottom":-45+"px"},150);
+                $(App.playlistLayout.list.el).animate({"margin-left": -100 + "%"}, 300, function(){
+                    $(App.playlistLayout.friends.el).fadeIn("slow");
+                    $(App.footer.el).animate({"margin-bottom":-0+"px"},150);
+                    $(this).hide();
+                });
             },
             downloadSong: function () {
 

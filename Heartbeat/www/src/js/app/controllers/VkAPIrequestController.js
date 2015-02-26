@@ -24,11 +24,11 @@ define([
         },
         startPlayList: function () {
             this.vkPlayListController = new VkPlayListController();
-            this.vkPlayListController.getAudio(15);
+            this.vkPlayListController.getAudio(25);
         },
         startFriends: function(){
             this.vkFriendsController = new VkFriendsController();
-            this.vkFriendsController.getFriends(15);
+            this.vkFriendsController.getFriends(25);
         },
         startUserInfo: function () {
             this.vkUserController = new VkUserController();
