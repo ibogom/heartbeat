@@ -61,6 +61,7 @@ define([
                     seconds = songs.duration % 60;
 
                 return {
+                    media_id: songs.aid,
                     artist: songs.artist,
                     minutes: minutes,
                     seconds: seconds,

@@ -11,8 +11,7 @@ define(['jquery', 'underscore', 'backbone','marionette', 'models/VkFriendModel',
             template: templateFn['FriendsView.hbs'],
             model: VkFriendModel,
             ui:{
-                "share":".fl-share",
-                "listen":".fl-listen"
+
             },
             events: {
 

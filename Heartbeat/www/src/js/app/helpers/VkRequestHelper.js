@@ -16,12 +16,18 @@ define(["jquery", "underscore"],
                     "deleteAudio": "audio.delete",
                     "editAudio": "audio.edit",
                     "countAudio": "audio.getCount",
-                    "userInfo": "users.get"
+                    "userInfo": "users.get",
+                    "sendMessage": "messages.send"
                 },
                 getAudioUrl: function (ownerId, songsNum, accessToken) {
                     return this.defaults.defUrl + this.defaults.getAudio + "?" +
                         "owner_id=" + ownerId + "&count=" + songsNum +
                         "&access_token=" + accessToken;
+                },
+                sendAudio: function(ownerId, userId, songId, accessToken){
+                  return this.defaults.defUrl + this.defaults.sendMessage + "?" +
+                          "user_id=" + userId + "&attachment=" + "audio" + ownerId + "_" + songId+
+                          "&access_token=" + accessToken;
                 },
                 getFriendsUrl: function (userId,friendsNumToReturn,accessToken) {
                     return this.defaults.defUrl + this.defaults.getFriends + "?" +

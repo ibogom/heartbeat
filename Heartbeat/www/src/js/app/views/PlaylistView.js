@@ -14,6 +14,7 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
             initialize: function () {
                 this.player = new Player();
                 this.global = Backbone.Wreqr.radio.channel('global');
+                this.messages = Backbone.Wreqr.radio.channel('messages');
                 this.user = Backbone.Wreqr.radio.channel('user');
                 this.user.beats = (this.user.beats !== undefined)? this.user.beats: 300;
             },
@@ -68,9 +69,8 @@ define(['App', 'jquery', 'underscore', 'backbone', 'marionette', 'models/VkAudio
                     self.ui.like.hide();
                 });
             },
-            shareSong: function (){
-                this.user.beats = this.user.beats+6;
-                window.localStorage.setItem("beats",JSON.stringify(this.user.beats));
+            shareSong: function (e){
+                this.messages.send = { audio: e.currentTarget.dataset.id};
                 Backbone.history.navigate("friends", {trigger: true, replace:false});
                 $(App.footer.el).show().animate({"margin-bottom":-45+"px"},150);
                 $(App.playlistLayout.list.el).animate({"margin-left": -100 + "%"}, 300, function(){

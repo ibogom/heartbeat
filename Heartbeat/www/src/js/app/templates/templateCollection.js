@@ -21,7 +21,9 @@ Handlebars.registerPartial("FriendsView.hbs", this["Heartbeat"]["FriendsView.hbs
     + escapeExpression(((helper = (helper = helpers.lastName || (depth0 != null ? depth0.lastName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"lastName","hash":{},"data":data}) : helper)))
     + "</span>\r\n        <span class=\"first-name\">"
     + escapeExpression(((helper = (helper = helpers.firstName || (depth0 != null ? depth0.firstName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"firstName","hash":{},"data":data}) : helper)))
-    + "</span>\r\n    </div>\r\n    <div class=\"fl-stat\">\r\n        <span class=\"raiting\">rating: </span>\r\n        <span class=\"rating-value\">10203</span>\r\n    </div>\r\n</div>\r\n<div class=\"fl-active-btns\">\r\n    <input type=\"checkbox\" name=\"\" id=\"\"/><label class=\"icons check\"></label>\r\n</div>\r\n";
+    + "</span>\r\n    </div>\r\n    <div class=\"fl-stat\">\r\n        <span class=\"raiting\">rating: </span>\r\n        <span class=\"rating-value\">10203</span>\r\n    </div>\r\n</div>\r\n<div class=\"fl-active-btns\">\r\n    <input class=\"checkbox\" type=\"checkbox\" data-id=\""
+    + escapeExpression(((helper = (helper = helpers.user_id || (depth0 != null ? depth0.user_id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"user_id","hash":{},"data":data}) : helper)))
+    + "\" name=\"\" id=\"\"/><label class=\"icons check\"></label>\r\n</div>\r\n";
 },"useData":true}));
 
 Handlebars.registerPartial("GetBeats.hbs", this["Heartbeat"]["GetBeats.hbs"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
@@ -161,7 +163,9 @@ Handlebars.registerPartial("PlaylistView.hbs", this["Heartbeat"]["PlaylistView.h
     + escapeExpression(((helper = (helper = helpers.minutes || (depth0 != null ? depth0.minutes : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"minutes","hash":{},"data":data}) : helper)))
     + ":"
     + escapeExpression(((helper = (helper = helpers.seconds || (depth0 != null ? depth0.seconds : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"seconds","hash":{},"data":data}) : helper)))
-    + "</span>\r\n</div>\r\n<div class=\"active-btns icons\">\r\n    <div class=\"active-btns-wrapper\">\r\n        <div>\r\n            <span class=\"share\"></span>\r\n            <span class=\"like\"></span>\r\n        </div>\r\n    </div>\r\n    <div class=\"active-btns-wrapper\">\r\n        <div>\r\n            <span class=\"remove\"></span>\r\n            <span class=\"download\"></span>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+    + "</span>\r\n</div>\r\n<div class=\"active-btns icons\">\r\n    <div class=\"active-btns-wrapper\">\r\n        <div>\r\n            <span class=\"share\" data-id=\""
+    + escapeExpression(((helper = (helper = helpers.media_id || (depth0 != null ? depth0.media_id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"media_id","hash":{},"data":data}) : helper)))
+    + "\"></span>\r\n            <span class=\"like\"></span>\r\n        </div>\r\n    </div>\r\n    <div class=\"active-btns-wrapper\">\r\n        <div>\r\n            <span class=\"remove\"></span>\r\n            <span class=\"download\"></span>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
 },"useData":true}));
 
 Handlebars.registerPartial("ProfileView.hbs", this["Heartbeat"]["ProfileView.hbs"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

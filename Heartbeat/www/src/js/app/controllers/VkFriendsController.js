@@ -46,6 +46,7 @@ define([
         saveData: function (result) {
             var friends = _.map(result, function (friends) {
                 return {
+                    user_id: friends.user_id,
                     firstName: friends.first_name,
                     lastName: friends.last_name,
                     isOnline: friends.online,
