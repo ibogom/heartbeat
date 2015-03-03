@@ -11,6 +11,7 @@ define([
         template: templateFn['MainLayout.hbs'],
         regions: {
             settings: '#layout-settings',
+            refresh: '#refresh-block',
             home: '#layout-home',
             playlists: '#layout-playlists'
         }

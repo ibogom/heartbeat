@@ -103,7 +103,7 @@ Handlebars.registerPartial("HomePageLayout.hbs", this["Heartbeat"]["HomePageLayo
   },"useData":true}));
 
 Handlebars.registerPartial("MainLayout.hbs", this["Heartbeat"]["MainLayout.hbs"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  return "<div id=\"layout-settings\">\r\n\r\n</div>\r\n<div id=\"layout-home\">\r\n\r\n</div>\r\n<div id=\"layout-playlists\">\r\n\r\n</div>";
+  return "<div id=\"layout-settings\">\r\n\r\n</div>\r\n<div id=\"refresh-block\">\r\n    <p class=\"swipe\"></p>\r\n    <p class=\"last-update\">Last update:<span class=\"update-date\"></span></p>\r\n</div>\r\n<div id=\"layout-home\">\r\n\r\n</div>\r\n<div id=\"layout-playlists\">\r\n\r\n</div>";
   },"useData":true}));
 
 Handlebars.registerPartial("MobileLogin.hbs", this["Heartbeat"]["MobileLogin.hbs"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

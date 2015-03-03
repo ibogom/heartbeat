@@ -1,7 +1,9 @@
 #main-layout{
 
 }
-
+#layout-home{
+  position: relative;
+}
 .layout-wrapper{
   position: absolute;
   display: table;
@@ -11,7 +13,32 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 45px;
+  #refresh-block{
+      width: 100%;
+      position: relative;
+      height: 0px;
+      display: block;
+      margin-top: 45px;
+      background-color: $third-clr;
+      overflow: hidden;
+      p{
+        color: $font-pr-clr;
+        text-align: left;
+        margin: 8px auto;
+        width: 180px;
+        height: 18px;
+        font-size: $font-14px;
+        overflow: hidden;
+      }
+      .last-update{
+        color: $font-thrd-clr;
+      }
+    .update-date{
+      margin-left: 10px;
+      font-size: $font-11px;
+      color: $font-pr-clr;
+    }
+  }
   #layout-profile {
     z-index: $middle-pos-index;
     position: absolute;

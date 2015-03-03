@@ -8,10 +8,12 @@ define([
     'backbone',
     'marionette',
     'collections/VkAudioCollection',
-    'views/PlayListCollectionView'
+    'views/PlayListCollectionView',
+    'helpers/SwipeDownHelper'
 ], function ($, _, App, Backbone, Marionette,
              VkAudioCollection,
-             PlayListCollectionView) {
+             PlayListCollectionView,
+             SwipeDownHelper) {
     "use strict";
     return Backbone.Marionette.Controller.extend({
         initialize: function () {
@@ -24,6 +26,7 @@ define([
         getAudio: function (songsNumber) {
             this.vkAudioCollection.songsNumber = songsNumber;
             (this.songs.length > 0)? this.getLocalAudio() : this.getAudioRequest();
+            SwipeDownHelper.action(this);
         },
         getLocalAudio: function(){
             this.vkAudioCollection.setData();
@@ -48,7 +51,7 @@ define([
             }
             window.loader.hide();
         },
-        detectChanges: function(){
+        refresh: function(){
             this.getAudioRequest();
         },
         compareResponse: function(response){
