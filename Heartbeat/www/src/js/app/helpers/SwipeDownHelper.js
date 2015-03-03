@@ -7,7 +7,7 @@ define(["jquery", "underscore"],
         var swipeDownHelper = function(){
             return {
                 action: function(controller){
-                    this.wrapper = $("#main-layout");
+                    this.wrapper = $("#layout-list");
                     this.swipeStarted = false;
                     this.refreshBlock = $("#refresh-block");
                     this.animationComplete = false;
@@ -30,7 +30,7 @@ define(["jquery", "underscore"],
                     this.scrollHeight = window.document.documentElement.scrollHeight;
                     this.abilityToScroll = this.scrollHeight - window.pageYOffset;
                     this.swipeStart = e.originalEvent.touches.length ? e.originalEvent.touches[0].pageY : e.pageY;
-                    this.swipeStarted = (window.scrollY === 0 && this.swipeStart >= 30 && this.abilityToScroll === this.scrollHeight)? true: false;
+                    this.swipeStarted = (window.scrollY === 0 && this.abilityToScroll === this.scrollHeight)? true: false;
                 },
                 checkSwipeDirection: function(e){
                     this.swipeStartedOffsetY = e.originalEvent.touches.length ? e.originalEvent.touches[0].pageY : e.pageY;
@@ -54,25 +54,22 @@ define(["jquery", "underscore"],
                     }
                 },
                 doDataUpdate: _.debounce(function (e) {
-                    var self = this,
-                        date = new Date();
+                    var self = this;
                     if (this.swipeStarted && this.animationComplete === true && this.detectSwipeHeight >= 60) {
                         this.animationComplete = false;
-                        //this.$spinner.show();
                         this.refreshBlock.animate({'height': "0px"},
                             {
                                 duration: 300,
                                 complete: function () {
                                     self.animationComplete = true;
                                     self.controller.refresh();
-                                    self.refreshBlock.find(".update-date").empty().text(date.toLocaleString());
                                 }
                             });
                     } else {
                         document.addEventListener('touchmove', function (e) { }, false);
                         this.refreshBlock.animate({'height': "0px"}, 300);
                     }
-                }, 10)
+                }, 5)
             };
         };
         return swipeDownHelper();

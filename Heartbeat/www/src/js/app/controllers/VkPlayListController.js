@@ -33,10 +33,12 @@ define([
             this.showView();
         },
         getAudioRequest: function(){
-            var self = this;
+            var self = this,
+                date = new Date();
             window.loader.show();
             this.vkAudioCollection.fetch().done(function (result) {
                 var songsCount = result.response.shift();
+                $(App.layout.refresh.el).find(".update-date").empty().text(date.toLocaleString());
                 self.saveData(result.response);
                 self.compareResponse(result.response);
                 self.showView();
