@@ -39,13 +39,13 @@ define([
             this.vkAudioCollection.fetch().done(function (result) {
                 var songsCount = result.response.shift();
                 $(App.layout.refresh.el).find(".update-date").empty().text(date.toLocaleString());
-                self.difItems = self.compareResponse(result.response);
-                if(self.difItems.length >= 0 && this.newItemAdded === false){
-
-                }else{
+                //self.difItems = self.compareResponse(result.response);
+                //if(self.difItems.length >= 0 && self.newItemAdded === false){
+                //    self.replaceDifItems(self.difItems);
+                //}else{
                     self.saveData(result.response);
                     self.showView();
-                }
+                //}
             });
         },
         showView: function () {
@@ -82,6 +82,15 @@ define([
             }
             return diff;
 
+        },
+        replaceDifItems: function(items){
+            //_.each(items, function(attr){
+            //    var app = $(".toDetails[data-id="+attr.id+"]"),
+            //        header = app.find("h4 span:last-child"),
+            //        image = app.find("img");
+            //    image.attr("src",attr.icon);
+            //    header.empty().text(attr.name);
+            //});
         },
         saveData: function (result) {
             var id = 0;
