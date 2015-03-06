@@ -39,10 +39,12 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App',
                         break;
                 }
                 //window.location.href = authUrl;
-                var ref = window.open(authUrl, '_blank', 'location=yes');
-                    ref.addEventListener('loadstop', function(event){
-                       window.alert("hello from:"+event.url);
+                //console.log(Inappbrowser);
+                var appInBrowser = window.open(authUrl, '_blank', 'location=yes');
+                appInBrowser.addEventListener('loadstart', function(event){
+                        window.alert("hello from:"+event.url);
                     });
+
             }
         });
     });
