@@ -38,12 +38,12 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'App',
                     case "twLogin":
                         break;
                 }
-                window.location.href = authUrl;
+                //window.location.href = authUrl;
                 //console.log(Inappbrowser);
-                //var appInBrowser = window.open(authUrl, '_blank', 'location=yes');
-                //appInBrowser.addEventListener('loadstart', function(event){
-                //        window.alert("hello from:"+event.url);
-                //    });
+                var appInBrowser = window.open(authUrl, '_blank', 'location=yes');
+                appInBrowser.addEventListener('loadstart', function(event){
+                        window.alert("hello from:"+event.url);
+                    });
 
             }
         });
