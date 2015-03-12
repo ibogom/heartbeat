@@ -10,7 +10,7 @@ define(["jquery", "underscore", "backbone"],
                 "securityKey": "sGkcxJvxfooJf7dHWWd6",
                 "url": "http://oauth.vk.com/authorize?",
                 "redirectUri": "http://192.168.1.100:8010",
-                "redirectUriWork": "http://10.129.171.67:8010",
+                "redirectUriWork": "http://192.168.56.1:8010",
                 "standAloneRedirect": "https://oauth.vk.com/blank.html",
                 "scope": "friends,audio",
                 "display": "mobile",
@@ -28,7 +28,7 @@ define(["jquery", "underscore", "backbone"],
                 return this.defaults.url +
                     "client_id=" + this.defaults.clientId +
                     "&scope=" + this.defaults.scope +
-                    "&redirect_uri=" + this.defaults.standAloneRedirect + "?loginMethod=" + loginMethod +
+                    "&redirect_uri=" + this.defaults.redirectUriWork + "?loginMethod=" + loginMethod +
                     "&display=" + this.defaults.display +
                     "&v=" + this.defaults.versionApi +
                     "&response_type=" + this.defaults.response;
