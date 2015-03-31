@@ -1,0 +1,25 @@
+<div class="photo">
+    <img src="{{ src }}" alt="{{ lastName }}"/>
+</div>
+<div class="info-wrapper">
+    <div class="personal-info">
+        <span class="second-name">{{ lastName }}</span>
+        <span class="first-name">{{ firstName }}</span>
+    </div>
+    <div class="stats">
+        <div class="title-row">
+            <span class="songs-title">Songs</span>
+            <span class="listeners-title">Listeners</span>
+            <span class="rating-title">Rating</span>
+        </div>
+        <div class="stat-row">
+            <span class="songs-total">{{ songsNumber }}</span>
+            <span class="listeners-res">{{ listenersNumber}}</span>
+            <span class="rating-res">{{ rating }}</span>
+        </div>
+    </div>
+    <div class="beats-main-title">
+        Beats for today
+    </div>
+    <span class="beats-now-wrapper"><span class="beats-now">{{ beatsNow }}</span> / {{ maxBeats }}</span>
+</div>

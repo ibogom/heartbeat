@@ -1,0 +1,96 @@
+ul.friends-wrapper{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  margin-bottom: 45px;
+  li{
+    min-height: 50px;
+    border-bottom: 1px solid $pr-clr;
+    list-style: none;
+    background-color: $scnd-clr;
+    color: $font-pr-clr;
+    display: table-row;
+    padding: 5px 0px 5px 10px;
+    box-sizing: border-box;
+    div{
+      display: block;
+      height: 65px;
+    }
+    .fl-photo{
+      width: 65px;
+      height: 65px;
+      padding: 7px;
+      float: left;
+      img{
+        border-radius: 50%;
+      }
+    }
+    .fl-info{
+      display: table-cell;
+      overflow: hidden;
+      width: 100%;
+      vertical-align: middle;
+      padding: 0px 4px;
+      box-sizing: border-box;
+    }
+    .fl-active-btns {
+      width: 45px;
+      height: 65px;
+      float: right;
+      text-align: right;
+      span{
+        display: inline-block;
+        float: left;
+        width: 37px;
+        height: 65px;
+        line-height: 65px;
+        text-align: center;
+      }
+      input[type="checkbox"]{
+        position: absolute;
+        margin-top: 20px;
+        width:25px;
+        height: 25px;
+        right: 15px;
+        opacity: 0;
+        z-index: $low-pos-index;
+      }
+      label {
+        display: block;
+        &:after {
+          font-family: "icons", sans-serif;
+          position: absolute;
+          font-size:$font-19px;
+          right: 15px;
+          content: '\e601';
+          color: $font-pr-clr;
+          margin-top: 18px;
+          right: 16px;
+        }
+      }
+      input[type="checkbox"]:checked+label:after{
+        opacity: 1;
+        color: $font-scnd-clr;
+      }
+    }
+    .name {
+      display: block;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+    }
+    .fl-stat {
+      display: block;
+      width: 100%;
+      height: 35px;
+      float: left;
+      .rating-value{
+        color: $font-scnd-clr;
+        font-size: $font-17px;
+      }
+    }
+  }
+}

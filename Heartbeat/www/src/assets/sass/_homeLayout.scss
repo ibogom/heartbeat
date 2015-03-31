@@ -1,0 +1,42 @@
+#layout-main-block{
+  min-height: 160px;
+}
+#layout-content-block{
+  position: relative;
+  background-color: $scnd-clr;
+  width: 100%;
+  display: block;
+  margin-top: -160px;
+  min-height: 160px;
+}
+#layout-notification {
+  position: relative;
+  width: 100%;
+  min-height: 36px;
+  display: block;
+}
+#layout-info {
+  position: absolute;
+  width: 100%;
+  min-height: 160px;
+  height: calc(100% - 320px);
+  height: -moz-calc(100% - 320px);
+  height: -webkit-calc(100% - 320px);
+  height: -o-calc(100% - 320px);
+  height: calc(100% - 320px);
+  display: block;
+}
+#layout-player-block{
+  width: 100%;
+  height: 160px;
+  display: block;
+  position: fixed;
+  bottom: 55px;
+  overflow: hidden;
+  border-top: 1px solid $pr-clr;
+  border-bottom: 1px solid $pr-clr;
+}
+#layout-beats-block{
+
+}
+
