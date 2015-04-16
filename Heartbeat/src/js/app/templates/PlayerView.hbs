@@ -1,0 +1,39 @@
+<div class="volume-bar">
+    <span class="volume-low icons"></span>
+        <span class="volume-wrapper">
+            <span class="volume-trigger" style="width:{{ volume }}%;"></span>
+            <span class="volume-trigger-button"></span>
+        </span>
+    <span class="volume-high icons"></span>
+</div>
+<div class="nav-player-wrapper">
+    <div class="active-buttons-left">
+        <span class="volume icons"></span>
+        <span class="play-type-wrapper">
+               <span class="repeat icons"></span>
+        </span>
+    </div>
+    <div class="nav-buttons icons">
+        <span class="prev"></span>
+        <span class="{{#if isPlayed}}pause{{else}}play{{/if}}"></span>
+        <span class="next"></span>
+    </div>
+    <div class="active-buttons-right">
+        <!--<span class="equalizer icons"></span>-->
+        <span class="profile icons"></span>
+        <span class="shuffle icons"></span>
+    </div>
+</div>
+<div class="song-name-bar">
+    <span class="artist-name">{{author}} - {{title}}</span>
+</div>
+<div class="progress-bar">
+    <span class="start-time">0:00</span>
+    <span class="progress-bar-wrapper">
+        <span class="progress-trigger"></span>
+    </span>
+    <span class="end-time">{{minutes}}:{{seconds}}</span>
+</div>
+<div class="action-button">
+    <span class="get-beats"></span>
+</div>

@@ -1,0 +1,278 @@
+.player-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-color: $scnd-clr;
+  z-index: $middle-pos-index;
+  div{
+    display: block;
+  }
+  .volume-bar{
+    height: 29px;
+    display: block;
+    margin-top: -30px;
+    padding: 0px 3px;
+    border-bottom: 1px solid $pr-clr;
+    .volume-low {
+      width: 12%;
+      text-align: center;
+      float: left;
+      line-height: $font-24px;
+      &:before {
+        content: '\e613';
+        font-size: $font-17px;
+        color: $font-pr-clr;
+      }
+    }
+    .volume-wrapper {
+      position: relative;
+      display: block;
+      float: left;
+      width: 76%;
+      height: 1px;
+      margin-top: 14px;
+      background-color: $font-pr-clr;;
+      line-height: 30px;
+      .volume-trigger{
+        display: block;
+        height: 1px;
+        width: 45%;
+        float: left;
+        background-color: $font-scnd-clr;
+      }
+      .volume-trigger-button{
+        position: relative;
+        float: left;
+        display: block;
+        height: 30px;
+        width: 5%;
+        margin-top: -14px;
+        z-index: $middle-pos-index;
+        &:before{
+          position: absolute;
+          content: '';
+          background-color: #D52C26;
+          top: 8px;
+          right:0px;
+          height: 12px;
+          width: 2px;
+        }
+        &:after{
+          position: absolute;
+          content: '';
+          background-color: #D52C26;
+          top: 14px;
+          left: 0px;
+          height: 1px;
+          width: 100%;
+        }
+      }
+    }
+    .volume-high {
+      width: 12%;
+      text-align: center;
+      float: right;
+      line-height: $font-24px;
+      &:before {
+        content: '\e616';
+        font-size: $font-17px;
+        color: $font-pr-clr;
+      }
+    }
+  }
+  /*--NAVIGATION BUTTONS CUSTOMIZATION--*/
+  .nav-player-wrapper{
+    display: table;
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    div:nth-child(odd){
+      width: 25px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .active-buttons-left{
+      position: relative;
+      .volume:before{
+          position: absolute;
+          display: block;
+          height: 25px;
+          top:10px;
+          font-size: $font-22px;
+          color: $font-pr-clr;
+          content: '\e614';
+        }
+      .play-type-wrapper{
+        display: block;
+        height: 25px;
+        width: 25px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        span{
+          position: relative;
+          float: left;
+          height: 25px;
+        }
+        .repeat:before{
+          content: '\e60f';
+          font-size: $font-22px;
+          color: $font-pr-clr;
+        }
+        .shuffle{
+          content: '\e611';
+          font-size: $font-22px;
+          color: $font-pr-clr;
+        }
+      }
+    }
+    .active-buttons-right{
+      position: relative;
+      .profile:before{
+          position: absolute;
+          display: block;
+          height: 25px;
+          top:10px;
+          font-size: $font-22px;
+          color: $font-pr-clr;
+          content: '\e61d';
+        }
+      .shuffle:before{
+        position: absolute;
+        display: block;
+        height: 25px;
+        bottom: 0;
+        font-size: $font-22px;
+        color: $font-pr-clr;
+        content: '\e611';
+      }
+    }
+    .active:before{
+      color: $font-scnd-clr!important;
+    }
+  }
+
+  .nav-buttons{
+    position: relative;
+    width: 230px;
+    height: 80px;
+    margin: 10px auto;
+    span{
+      width: 90px;
+      height: 100%;
+      text-align: center;
+      float: left;
+      color: $font-pr-clr;
+      &:before{
+        display: table-cell;
+        height: 60px;
+        width: 60px;
+        border: 1px solid $font-pr-clr;
+        border-radius: 50%;
+        color: $font-pr-clr;
+        font-size: 22px;
+        z-index: 100;
+        vertical-align: middle;
+      }
+      &:nth-child(odd) {
+       width: 70px;
+        margin-top: 10px;
+      }
+      &:nth-child(even){
+        &:before{
+          width: 80px;
+          height: 80px;
+          font-size: 40px;
+          line-height: 75px;
+        }
+      }
+      &:active:before{
+        color: $font-scnd-clr;
+        border-color: $font-scnd-clr;
+      }
+    }
+  }
+}
+.next:before{
+  content:'\e60b';
+}
+.prev:before{
+  content: '\e60c';
+}
+.pause:before{
+  content: '\e60d';
+}
+.play:before{
+  content:'\e60e';
+}
+.song-name-bar{
+  position: relative;
+  height: 30px;
+  width: 210px;
+  margin: 0 auto;
+  overflow: hidden;
+  span.artist-name {
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 440px;
+    height: 30px;
+    line-height: 30px;
+    color: $font-pr-clr;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-animation: SlideIn 15s infinite;
+    animation: SlideIn 15s infinite;
+  }
+}
+/*--PROGRESS BAR CUSTOMIZATION--*/
+.progress-bar{
+  width: 100%;
+  height: 30px;
+  background: none;
+  border-top: 1px solid $pr-clr;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  span{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: block;
+    float: left;
+    color: $font-pr-clr;
+    line-height: 30px;
+    &:first-child{
+      text-align: left;
+    }
+    &:last-child{
+      text-align: right;
+    }
+    &:nth-child(odd) {
+      width: 10%;
+    }
+  }
+  .progress-bar-wrapper {
+    height: 1px;
+    margin-top: 14px;
+    background-color: $font-pr-clr;
+    .progress-trigger{
+      display: block;
+      height: 1px;
+      width: 0%;
+      background-color: $font-scnd-clr;
+      &:before{
+        position: absolute;
+        content: '';
+        background-color: $font-scnd-clr;
+        top: -3px;
+        left: 0;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@import "playlist";
